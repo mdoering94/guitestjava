@@ -4,9 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.control.PasswordField;
+import javafx.scene.layout.AnchorPane;
 
 public class LoginController {
+	
+	@FXML
+	private AnchorPane mainLoginWindow;
 
     @FXML
     private Button quitButton;
@@ -21,18 +27,23 @@ public class LoginController {
     private PasswordField passField; // Value injected by FXMLLoader
     
     @FXML
-    void login(ActionEvent event) {
-    	System.out.println("Login!");
-    	System.out.println(userField.getText());
-    	System.out.println(passField.getText());
-    	userField.clear();
-    	passField.clear();
-    	loginButton.setDisable(true);
+    void klickLoginButton(ActionEvent event) {
+    	LoginAction.login(userField.getText(), passField.getText());
     }
+    
 
     @FXML
-    void quitApplication(ActionEvent event) {
-   
+    void klickQuitButton(ActionEvent event) {
+    	LoginAction.determinateProgram(event);
     }
-
+    
+    @FXML
+    void onKeyPressedAtMainWindow(KeyEvent event) {
+    	if(event.getCode() == KeyCode.ENTER) {
+    		LoginAction.login(userField.getText(), passField.getText());
+    	}else if(event.getCode() == KeyCode.ESCAPE) {		
+    		LoginAction.determinateProgram(event);
+    	}
+    }
 }
+    

@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 
 public class LoginWindow extends Application {
 	@Override
+
+	
 	public void start(Stage primaryStage) {
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("maingui.fxml"));
@@ -19,6 +21,7 @@ public class LoginWindow extends Application {
 			primaryStage.setTitle("Login");
 			primaryStage.show();
 			
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -26,5 +29,6 @@ public class LoginWindow extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		System.out.println("Hallo");
 	}
 }

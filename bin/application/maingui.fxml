@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="190.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+<AnchorPane fx:id="mainLoginWindow" onKeyPressed="#onKeyPressedAtMainWindow" prefHeight="190.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
       <VBox alignment="CENTER" layoutY="23.0" prefHeight="167.0" prefWidth="400.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
          <children>
@@ -40,8 +40,8 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="25.0" prefWidth="400.0" spacing="50.0">
                <children>
-                  <Button fx:id="quitButton" mnemonicParsing="false" onAction="#quitApplication" text="Quit" />
-                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" text="Login" />
+                  <Button fx:id="quitButton" mnemonicParsing="false" onAction="#klickQuitButton" text="Quit" />
+                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#klickLoginButton" text="Login" />
                </children>
             </HBox>
          </children>
